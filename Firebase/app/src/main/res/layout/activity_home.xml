@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/TXTcolor"
+    tools:context="com.example.ab0034.firebase.HomeActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/white"
+    android:weightSum="1">
+    <TextView
+        android:textColor="@color/TXTcolor"
+        android:layout_marginLeft="10dp"
+android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="center_vertical"
+        android:layout_width="0dp"
+        android:layout_weight="0.8"
+        android:layout_height="match_parent"
+        android:text="Welcome Home"/>
+    <ImageView
+        android:id="@+id/setting"
+        android:layout_width="0dp"
+        android:layout_weight="0.2"
+        android:src="@drawable/ic_settings"
+        android:tint="@color/TXTcolor"
+        android:padding="8dp"
+        android:layout_height="50dp" />
+</LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:elevation="5dp"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="UserName:"
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColorHint="@color/TXTcolor" />
+
+            <LinearLayout
+
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonChoose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/txt_bg"
+                    android:text="Choose"
+                    android:textColor="@color/TXTcolor" />
+
+                <Button
+                    android:id="@+id/buttonUpload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/txt_bg"
+                    android:text="Upload"
+                    android:textColor="@color/TXTcolor" />
+
+                <Button
+                    android:id="@+id/buttonShow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/txt_bg"
+                    android:text="Show"
+                    android:textColor="@color/TXTcolor" />
+
+
+            </LinearLayout>
+
+            <EditText
+
+                android:id="@+id/txt_filename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:hint="Enter file name..."
+                android:padding="20dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColorHint="@color/TXTcolor" />
+
+            <ImageView
+
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/linearLayout"
+                android:background="@color/white" />
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,34 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.ab0034.fileshare.Fragment.PicsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <GridView
+        android:id="@+id/Imagegrid"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:numColumns="3"
+        android:verticalSpacing="20dp"
+        android:horizontalSpacing="20dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:verticalScrollbarPosition="right"
+        android:scrollbars="vertical"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--<at.markushi.ui.CircleButton-->
+            <!--android:layout_width="64dip"-->
+            <!--android:layout_height="64dip"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--app:cb_color="#99CC00"-->
+            <!--android:background="@drawable/ic_arrow_forward"-->
+            <!--app:cb_pressedRingWidth="8dip" />-->
+    </RelativeLayout>
+
+</FrameLayout>
