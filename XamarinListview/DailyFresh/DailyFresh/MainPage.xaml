@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DailyFresh"
+             x:Class="DailyFresh.MainPage"
+             xmlns:controls="clr-namespace:Plugin.CrossPlatformTintedImage.Abstractions;assembly=Plugin.CrossPlatformTintedImage.Abstractions">
+
+    <StackLayout HorizontalOptions="FillAndExpand"
+              VerticalOptions="Start"
+             x:Name="MainLayout"
+                 Orientation="Vertical"
+                >
+        <StackLayout HorizontalOptions="FillAndExpand"
+                 VerticalOptions="StartAndExpand"
+                 HeightRequest="50"
+                 Padding="10,0,10,0"
+                 Spacing="20"
+                         BackgroundColor="#1071BF"
+                         Orientation="Horizontal"
+                 x:Name="Toolbar">
+            <controls:TintedImage x:Name="tintedImage" Source="menu.png" VerticalOptions="Center" HorizontalOptions="Start" TintColor="White" HeightRequest="30"
+                                  WidthRequest="30"/>
+            <Label  x:Name="Databox" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Text="Field Sales"
+                       TextColor="White"  Font="20"/>
+            <controls:TintedImage x:Name="CartTint" Source="cart.png" VerticalOptions="Center" HorizontalOptions="End" TintColor="White" HeightRequest="30"
+                                  WidthRequest="30"/>
+        </StackLayout>
+
+        <StackLayout
+            WidthRequest="100"
+            HeightRequest="100"
+            BackgroundColor="WhiteSmoke"
+          Padding="10,0,10,0"
+            Orientation="Vertical"
+            x:Name="QuickAction">
+            <Label HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" Text="QUICK ACTION"
+                       TextColor="Black"  Font="15" />
+
+            <StackLayout HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"
+                 HeightRequest="100"
+                         WidthRequest="100"
+                         Orientation="Horizontal">
+                <StackLayout HorizontalOptions="CenterAndExpand"
+                             
+                 VerticalOptions="CenterAndExpand"
+                HeightRequest="80"
+                 WidthRequest="100"
+                             Orientation="Vertical">
+                    <controls:TintedImage  Source="adduser.png" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" TintColor="Black" HeightRequest="30"
+                                  WidthRequest="30"/>
+                    <Label  HorizontalOptions="StartAndExpand" VerticalOptions="Center" Text="New Cust"
+                       TextColor="Black"  Font="15"/>
+
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="StartAndExpand"
+                 VerticalOptions="CenterAndExpand"
+              HeightRequest="80"
+                 WidthRequest="100"
+ Orientation="Vertical">
+                    <controls:TintedImage  Source="NewOrder.png" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" TintColor="Black" HeightRequest="30"
+                                  WidthRequest="30"/>
+                    <Label  HorizontalOptions="StartAndExpand" VerticalOptions="Center" Text="New Order"
+                       TextColor="Black"   Font="15"/>
+
+                </StackLayout>
+                <StackLayout HorizontalOptions="StartAndExpand"
+                 VerticalOptions="CenterAndExpand"
+               HeightRequest="80"
+                         WidthRequest="100"
+                         Orientation="Vertical">
+                    <controls:TintedImage  Source="SearchFolder.png" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" TintColor="Black" HeightRequest="30"
+                                  WidthRequest="30"/>
+                    <Label  HorizontalOptions="StartAndExpand" VerticalOptions="Center" Text="Browse Items"
+                       TextColor="Black"   Font="15"/>
+
+                </StackLayout>
+                <StackLayout HorizontalOptions="StartAndExpand"
+                 VerticalOptions="CenterAndExpand"
+                 HeightRequest="80"
+                         WidthRequest="100"
+                         Orientation="Vertical">
+                    <controls:TintedImage  Source="SearchUser.png" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" TintColor="Black" HeightRequest="30"
+                                  WidthRequest="30"/>
+                    <Label  HorizontalOptions="StartAndExpand" VerticalOptions="Center" Text="Browser Cust"
+                       TextColor="Black"  Font="15"/>
+
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout HorizontalOptions="FillAndExpand"
+                 VerticalOptions="StartAndExpand"
+                 HeightRequest="50"
+                     BackgroundColor="White"
+                 Padding="10,0,10,0"
+                Orientation="Horizontal"
+                     x:Name="PendingOrder">
+
+            <Label  HorizontalOptions="StartAndExpand" VerticalOptions="Center" Text="PENDING ORDERS"
+                       TextColor="Black" Font="20"/>
+            <Label  x:Name="PendingCount"  x:Uid="PendingCount"  HorizontalOptions="EndAndExpand" VerticalOptions="Center" Text=""
+                       TextColor="#F48B33"  Font="20"/>
+
+        </StackLayout>
+
+        <StackLayout
+          HorizontalOptions="FillAndExpand"
+           VerticalOptions="FillAndExpand"
+            BackgroundColor="Wheat"
+             Padding="10,0,10,0"
+             Orientation="Vertical"
+                x:Name="ListView">
+            <!--<ActivityIndicator VerticalOptions="Center" HorizontalOptions="Center" x:Name="activity_indicator" Color="#4D7EE1" 
+                               HeightRequest="100"/>-->
+            <!-- ListView-->
+            <ListView x:Name="myList" HasUnevenRows="true" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!-- Here we make a Horizontal orientation with the help of StackLayout-->
+                            <StackLayout Orientation="Horizontal" Margin="5" HeightRequest="90">
+                                <Image Source="{Binding image}" WidthRequest="100" HeightRequest="200" Aspect="AspectFit" />
+                                <StackLayout VerticalOptions="Center">
+                                    <Label Text="{Binding title}" TextColor="#1C5AD8" />
+                                </StackLayout>
+                                <Image HorizontalOptions="EndAndExpand" HeightRequest="20" WidthRequest="20" Source="more_icon.png" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<Label HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" Text="QUICK ACTION"
+                       TextColor="Black"  Font="15" />
+            <ListView x:Name="empListView"  
+           
+                IsGroupingEnabled = "true"                    
+                HasUnevenRows="True"  
+                SeparatorVisibility="Default">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Spacing="2" Orientation="Vertical">
+                                <Label Text="{Binding FullName}" FontSize="Medium" LineBreakMode="NoWrap" Margin="10,0,0,0"/> 
+                                <Label Text="{Binding Department}" FontSize="Small" LineBreakMode="NoWrap" Margin="10,0,0,0"/> 
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="50">
+                            <StackLayout BackgroundColor="#808080">
+                                <Label Text="hello "  
+                                   TextColor="Black"  
+                                   FontSize="Small"  
+                                   VerticalOptions="CenterAndExpand"  
+                                   Margin="10,0,0,0"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+            </ListView>-->
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
+<!--ItemsSource="{Binding}"  
+                GroupShortNameBinding = "{Binding Key}"  
+                GroupDisplayBinding = "{Binding Key}"-->
+
+
+
